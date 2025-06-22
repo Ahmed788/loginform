@@ -11,7 +11,7 @@ async function openDb() {
 }
 
 export async function POST(req: NextRequest) {
-  const { username, password, email, name } = await req.json();
+  const { username, password } = await req.json();
   const db = await openDb();
   await db.exec(
     "CREATE TABLE IF NOT EXISTS usrs (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT, email TEXT, name TEXT)"
