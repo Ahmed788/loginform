@@ -24,6 +24,13 @@ export default function RegisterPage() {
       <div className="w-full max-w-md bg-white p-8 rounded-3xl shadow-lg flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-8 text-blue-800 text-center">تسجيل مستخدم جديد</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+              <input
+            type="text"
+            placeholder="الاسم الكامل"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            className="border p-2 rounded placeholder:text-gray-700 text-gray-900 bg-gray-50"
+          />
           <input
             type="text"
             placeholder="اسم المستخدم"
@@ -45,13 +52,7 @@ export default function RegisterPage() {
             onChange={e => setEmail(e.target.value)}
             className="border p-2 rounded placeholder:text-gray-700 text-gray-900 bg-gray-50"
           />
-          <input
-            type="text"
-            placeholder="الاسم الكامل"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            className="border p-2 rounded placeholder:text-gray-700 text-gray-900 bg-gray-50"
-          />
+      
           <button type="submit" className="bg-green-600 text-white rounded px-6 py-2 font-bold mt-2">تسجيل</button>
         </form>
         {message && <div className="mt-6 text-center text-green-700 font-semibold">{message}</div>}
